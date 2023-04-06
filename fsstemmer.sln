@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3E4F8195-A049-4760-A7B9-B9AA8A1B6C3A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Stemmer.Porter", "src\Stemmer.Porter\Stemmer.Porter.fsproj", "{C50B160B-0FE0-48C8-B9F3-19BF3C852A83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E7CBB164-7A46-43EB-8224-FD59C43A05D8}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Stemmer.Porter.Tests", "tests\Stemmer.Porter.Tests\Stemmer.Porter.Tests.fsproj", "{D2FB4E5E-DC3B-4FF9-AF40-74D96B141F27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C50B160B-0FE0-48C8-B9F3-19BF3C852A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50B160B-0FE0-48C8-B9F3-19BF3C852A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50B160B-0FE0-48C8-B9F3-19BF3C852A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50B160B-0FE0-48C8-B9F3-19BF3C852A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2FB4E5E-DC3B-4FF9-AF40-74D96B141F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FB4E5E-DC3B-4FF9-AF40-74D96B141F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FB4E5E-DC3B-4FF9-AF40-74D96B141F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2FB4E5E-DC3B-4FF9-AF40-74D96B141F27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C50B160B-0FE0-48C8-B9F3-19BF3C852A83} = {3E4F8195-A049-4760-A7B9-B9AA8A1B6C3A}
+		{D2FB4E5E-DC3B-4FF9-AF40-74D96B141F27} = {E7CBB164-7A46-43EB-8224-FD59C43A05D8}
+	EndGlobalSection
+EndGlobal
