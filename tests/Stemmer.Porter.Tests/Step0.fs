@@ -50,7 +50,12 @@ module Step0Tests =
         let subject = Step0.markConsonantY word
         Assert.Equal(expected, subject)
         
-        
+    [<Theory>]
+    [<InlineData("test's", "test")>]
+    [<InlineData("test", "test")>]
+    let ``removeSApostrophe tests`` (word: string, expected: string) =
+        let subject = Step0.removeSApostrophe word
+        Assert.Equal(expected, subject) 
 
     [<Theory>]
     [<InlineData("youth", "Youth")>]
