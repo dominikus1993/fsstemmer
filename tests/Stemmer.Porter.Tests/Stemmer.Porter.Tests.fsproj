@@ -24,4 +24,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Stemmer.Porter\Stemmer.Porter.fsproj" />
+  </ItemGroup>
+
 </Project>

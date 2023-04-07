@@ -1,7 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <Compile Include="String.fs" />
     <Compile Include="Step0.fs" />
   </ItemGroup>
-
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>Stemmer.Porter.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
 </Project>
