@@ -49,3 +49,15 @@ module Step0Tests =
     let ``markConsonantY tests`` (word: string, expected: string) =
         let subject = Step0.markConsonantY word
         Assert.Equal(expected, subject)
+        
+        
+
+    [<Theory>]
+    [<InlineData("youth", "Youth")>]
+    [<InlineData("boYish", "boYish")>]
+    [<InlineData("flying", "flying")>]
+    [<InlineData("youth's", "Youth")>]
+    let ``apply tests`` (word: string, expected: string) =
+        let subject = Step0.apply word
+        Assert.Equal(expected, subject)
+        
