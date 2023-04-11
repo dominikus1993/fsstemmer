@@ -7,13 +7,13 @@ module Step1a =
     let private replaceResult = ReplaceResultBuilder()
     let private regex = Regex("([aeiouy]).+s$", RegexOptions.Compiled ||| RegexOptions.IgnoreCase)
     
-    let private replaceSses(word: string) =
+    let internal replaceSses(word: string) =
         if word.EndsWith("sses") then
             Found(word |> StringUtils.replaceSuffix "sses" "ss")
         else
             Next(word)
 
-    let private replaceIedAndIes(word: string) =
+    let internal replaceIedAndIes(word: string) =
         if word.EndsWith("ied") || word.EndsWith("ies") then
             let result = if word.Length > 4 then
                             word |> StringUtils.replaceSuffix "ied" "i" |> StringUtils.replaceSuffix "ies" "i"
@@ -24,21 +24,21 @@ module Step1a =
             Next(word)
 
     [<CompiledName("RemoveS")>]
-    let private removeS(word: string) =
+    let internal removeS(word: string) =
         if regex.IsMatch(word) then
             Found(word |> StringUtils.removeSuffix "s")
         else
             Next(word)
 
     [<CompiledName("LeaveUSandSS")>]
-    let private leaveUSandSS(word: string) =
+    let internal leaveUSandSS(word: string) =
         if word.EndsWith("ss") || word.EndsWith("us") then
             Found(word)
         else
             Next(word)
 
     [<CompiledName("ReplaceSuffix")>]
-    let private replaceSuffix(word: string) =
+    let internal replaceSuffix(word: string) =
         let result = replaceResult {
             yield replaceSses word
             yield replaceIedAndIes word

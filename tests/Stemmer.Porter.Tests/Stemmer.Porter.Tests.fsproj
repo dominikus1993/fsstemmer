@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Include="Step0.fs" />
+    <Compile Include="Step1a.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
