@@ -15,3 +15,14 @@ module Step1aTests =
             Assert.Equal(ReplaceResult.Next(expected), subject)
         else
             Assert.Equal(ReplaceResult.Found(expected), subject)
+            
+    [<Theory>]
+    [<InlineData("abyss", false, "abyss")>]
+    [<InlineData("us", false, "us")>]
+    [<InlineData("gap", true, "gap")>]
+    let ``leaveUSandSS tests`` (word: string, isNext: bool, expected: string) =
+        let subject = Step1a.leaveUSandSS word
+        if isNext then
+            Assert.Equal(ReplaceResult.Next(expected), subject)
+        else
+            Assert.Equal(ReplaceResult.Found(expected), subject)
