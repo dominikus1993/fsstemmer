@@ -3,18 +3,14 @@ namespace Stemmer.Porter
 module Step0 =
     open System.Text.RegularExpressions
 
-    let internal regex = Regex("^y|([aeiouy])y", RegexOptions.Compiled)
+    let internal regex = Regex("^y|([aeiouy])y", RegexOptions.Compiled ||| RegexOptions.IgnoreCase)
 
-    [<CompiledName("TrimEndApostrophe")>]
     let internal trimEndApostrophe = StringUtils.removeSuffix "'"
 
-    [<CompiledName("TrimStartApostrophe")>]
     let internal trimStartApostrophe = StringUtils.skipPrefix "'"
 
-    [<CompiledName("RemoveSApostrophe")>]
     let internal removeSApostrophe = StringUtils.removeSuffix "'s"
 
-    [<CompiledName("MarkConsonantY")>]
     let internal markConsonantY (word: string) =
         if word.Contains("y") then
             regex.Replace(word, "$1Y")
