@@ -26,3 +26,25 @@ module Step1aTests =
             Assert.Equal(ReplaceResult.Next(expected), subject)
         else
             Assert.Equal(ReplaceResult.Found(expected), subject)
+
+    [<Theory>]
+    [<InlineData("actresses", false, "actress")>]
+    [<InlineData("test", true, "test")>]
+    let ``replaceSses tests`` (word: string, isNext: bool, expected: string) =
+        let subject = Step1a.replaceSses word
+        if isNext then
+            Assert.Equal(ReplaceResult.Next(expected), subject)
+        else
+            Assert.Equal(ReplaceResult.Found(expected), subject)
+            
+    [<Theory>]
+    [<InlineData("tied", false, "tie")>]
+    [<InlineData("ties", false, "tie")>]
+    [<InlineData("cries", false, "cri")>]
+    [<InlineData("test", true, "test")>]
+    let ``replaceIedAndIes tests`` (word: string, isNext: bool, expected: string) =
+        let subject = Step1a.replaceIedAndIes word
+        if isNext then
+            Assert.Equal(ReplaceResult.Next(expected), subject)
+        else
+            Assert.Equal(ReplaceResult.Found(expected), subject)
